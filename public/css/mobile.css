@@ -1,0 +1,265 @@
+@media(max-width : 750px){
+    /* html 영역 */
+
+#wrap{
+    scroll-snap-type: y mandatory ;
+}
+
+
+
+/* header 영역 */
+#header_top{
+    display: inline-block;
+    position: absolute;
+    top : 50%;
+    margin: 30px;
+    width: 80%;
+    height: 30%;
+    font-family: 'ChosunBg';
+}
+#header_top{
+    font-size: 45px;
+}
+
+#header_wrap{
+    background-color: #ffffff;
+    scroll-snap-align: center;  
+}
+#header {
+    width: 100vw;
+    height: 100vh;    
+}
+#menu_icon{
+    display: block;
+    float: right;
+    margin: 30px;
+    border: none;
+    background: #ffffff;
+}
+#img {
+    display: none;
+}
+#logo{
+    margin: 0 auto;
+    
+}
+#logo > a > .w_logo{
+    display: none;
+}
+
+#logo > a >.m_logo1{
+    display: block;
+    width: 300px;
+    padding : 0 0 0 30px;
+}
+.m_logo2{
+    display:block;
+    writing-mode: vertical-rl;
+    width: 100px;
+    height: 300px;
+    margin: 10px 0 0 165px;
+    font-size: 60px;
+    font-family: 'ChosunBg';
+    color: #377b7c;
+}
+
+
+#logo > a {
+    display: flex;
+    align-items: center
+}
+#logo > a > span{
+    display: inline-block;
+    top : 40px;
+    width: 100%;
+    word-break:break-all;
+    height: 100%;
+    margin: 50px 0 0 0 ;
+    font-size: 60px;
+    font-family: 'ChosunBg';
+}
+#logo > a > span:hover{
+    color : #377b7c;
+    transition-duration: 0.5s;
+}
+
+#gnb{
+    display: none;
+}
+
+
+/* visual 영역 */
+#visual_wrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height:100%;
+    background-color: var(--main-color);
+    scroll-snap-align: center;
+    
+    
+}
+#visual {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    scroll-snap-type: y mandatory;  
+}
+#about_card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    scroll-snap-type: y mandatory;  
+    scroll-snap-align: center;
+    
+    
+}
+#about_card > p {
+    height: 75vh;
+    width: 80%;    
+    margin: 7.5vh 10% 7.5vh 10%;
+    scroll-snap-align: center;
+}
+#photo {
+    position: sticky;
+    height: 75vh;
+    width: 80%;
+    margin: 15vh 10% 7.5vh 10%;
+    background-color: #fefefe;
+    scroll-snap-align: center;  
+
+}
+#card1{
+    background-color: red;
+}
+#card2{
+    background-color: yellow;
+}
+#card3{
+    background-color: brown;
+}
+#card4{
+    background: blue;
+}
+
+/* project 영역 */
+
+#project_wrap{
+    scroll-snap-align: center;  
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    width: 1920px;
+    height: 800px;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+#project_wrap > li{
+    width: 300px;
+    height: 500px;
+    border: 5px solid rgba(180, 175, 175, 0.8);
+    border-radius: 30px;
+    background: #333333;
+}
+
+.off{
+    display: none;
+}
+.on{
+    display: inline-block;
+    position: absolute;
+    top : 100px ;
+    width: 1000px;
+    height: 600px;
+    background-color: #377b7c;
+    border: 5px solid rgba(180, 175, 175, 0.8);
+    border-radius: 30px;
+}
+
+#project_wrap > li:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+}
+.on > div {
+    height: 50px;
+    display: block;
+    text-align: right;
+}
+.on >div> button{
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #333333;
+}
+.project_photo {
+    white-space:nowrap; 
+    overflow-y:hidden;
+    padding : 0 15px 0 15px
+}
+.project_photo > li {
+    display: inline-flex;
+    margin: 0 15px 0 15px;
+    width: 400px;
+    height: 200px;
+}
+
+
+
+/* etc */
+#gnb > li:hover > .gnb_icon1{
+    background-image: url("/public/img/home_hover.png");
+    
+}
+.gnb_icon1{
+    background-image: url("/public/img/home_basic.png");
+}
+#gnb > li:hover > .gnb_icon2{
+    background-image: url("/public/img/id-card_hover.png");
+    
+}
+.gnb_icon2{
+    background-image: url("/public/img/id-card_basicpng.png");
+}
+#gnb > li:hover > .gnb_icon3{
+    background-image: url("/public/img/paper_hover.png");
+    
+}
+.gnb_icon3{
+    background-image: url("/public/img/paper_basic.png");
+}
+#gnb > li:hover > .gnb_icon4{
+    background-image: url("/public/img/contact_hover.png");
+    
+}
+.gnb_icon4{
+    background-image: url("/public/img/contact_basic.png");
+}
+#gnb > li:hover > .gnb_icon5{
+    background-image: url("/public/img/expre-hover.png");
+    
+}
+.gnb_icon5{
+    background-image: url("/public/img/expre-basic.png");
+}
+
+/* 폰트 */
+@font-face {
+    font-family: 'ChosunBg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 
+scroll-padding-top: 0;
+scroll-snap-align : start end; */
+}
+@media (max-width: 345px) {
+    *{
+        display: none;
+    }
+}

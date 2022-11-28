@@ -1,0 +1,288 @@
+/* html 영역 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* color */
+    --main-color : #377b7c;
+    /* --font-color */
+}
+ul, li {
+    list-style: none;
+}
+a{
+    color: #333333;
+    text-decoration: none;
+}
+
+
+
+/* header 영역 */
+#header_top {
+    display: none;
+}
+#header_wrap{
+    background-color: #ffffff;    
+}
+#header {
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    width: 1200px;
+    height: 75px;
+    margin: 0 auto;
+}
+#menu_icon{
+    display: none;
+}
+#logo > a > .m_logo1{
+    display: none;
+}
+.m_logo2{
+    display: none;
+}
+#logo {
+    display: block;
+    height: 100px;
+    width:  300px;
+    margin-bottom: 20px;
+}
+
+#logo > a {
+    display: flex;
+    align-items: center
+}
+#logo > a > span{
+    display: inline-block;
+    top : 40px;
+    margin: 50px 0 0 0 ;
+    font-size: 80px;
+    font-family: 'ChosunBg';
+}
+#logo > a > span:hover{
+    color : #377b7c;
+    transition-duration: 0.5s;
+}
+
+#gnb{
+    float: right;
+    display: flex;
+    justify-content: end;
+    width: 900px;
+    padding: 0 0 0 100px;
+    align-items: center;
+}
+#gnb > li {
+    display: flex;
+    justify-content: end;
+    width: 130px;
+    height: 50px;
+    margin-top: 27px;
+    padding-right: 13px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+}
+#gnb > li > span {
+    padding : 15px;
+    margin-left: -17px;
+    font-size: 20px;
+    width: 80px;
+    height: 50px;
+
+}
+#gnb > li:hover{
+    color : #fefefe;
+    background-color: var(--main-color);
+    transition-duration: 0.5s;
+}
+.gnb_span {
+    margin-right: -10px !important;
+}
+.gnb_span2 {
+    margin-right: 0px !important;
+    font-size: 18px !important;
+    width: 78px !important;
+    padding-top: 16px !important;
+    letter-spacing: 0.5px;
+    padding: 16px 15px 15px 12px !important;
+}
+.icon_position{
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 25% 50%;
+    width: 50px;
+    height: 50px;
+}
+.icon_position2{
+    background-repeat: no-repeat;
+    background-size: 47%;
+    background-position: 25% 50%;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+/* visual 영역 */
+#visual_wrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 850px;
+    background-color: var(--main-color);
+    background-attachment: fixed;
+}
+#visual {
+    display: flex;
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
+#about_card {
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+     
+}
+#about_card > p {
+    width: 500px;
+    height: 750px;
+    margin-top: 50px;
+    scroll-margin-top: 50px ;
+    scroll-snap-align : center;
+
+}
+#photo {
+    position: sticky;
+    height: 750px;
+    width: 500px;
+    margin: 50px;
+    background-color: #fefefe;
+}
+#card1{
+    background-color: red;
+}
+#card2{
+    background-color: yellow;
+}
+#card3{
+    background-color: brown;
+}
+#card4{
+    background: blue;
+}
+
+/* project 영역 */
+
+#project_wrap{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    width: 1920px;
+    height: 800px;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+#project_wrap > li{
+    width: 300px;
+    height: 500px;
+    border: 5px solid rgba(180, 175, 175, 0.8);
+    border-radius: 30px;
+    background: #333333;
+}
+
+.off{
+    display: none;
+}
+.on{
+    display: inline-block;
+    position: absolute;
+    top : 100px ;
+    width: 1000px;
+    height: 600px;
+    background-color: #377b7c;
+    border: 5px solid rgba(180, 175, 175, 0.8);
+    border-radius: 30px;
+}
+
+#project_wrap > li:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+}
+.on > div {
+    height: 50px;
+    display: block;
+    text-align: right;
+}
+.on >div> button{
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #333333;
+}
+.project_photo {
+    white-space:nowrap; 
+    overflow-y:hidden;
+    padding : 0 15px 0 15px
+}
+.project_photo > li {
+    display: inline-flex;
+    margin: 0 15px 0 15px;
+    width: 400px;
+    height: 200px;
+}
+
+
+
+/* etc */
+#gnb > li:hover > .gnb_icon1{
+    background-image: url("/public/img/home_hover.png");
+    
+}
+.gnb_icon1{
+    background-image: url("/public/img/home_basic.png");
+}
+#gnb > li:hover > .gnb_icon2{
+    background-image: url("/public/img/id-card_hover.png");
+    
+}
+.gnb_icon2{
+    background-image: url("/public/img/id-card_basicpng.png");
+}
+#gnb > li:hover > .gnb_icon3{
+    background-image: url("/public/img/paper_hover.png");
+    
+}
+.gnb_icon3{
+    background-image: url("/public/img/paper_basic.png");
+}
+#gnb > li:hover > .gnb_icon4{
+    background-image: url("/public/img/contact_hover.png");
+    
+}
+.gnb_icon4{
+    background-image: url("/public/img/contact_basic.png");
+}
+#gnb > li:hover > .gnb_icon5{
+    background-image: url("/public/img/expre-hover.png");
+    
+}
+.gnb_icon5{
+    background-image: url("/public/img/expre-basic.png");
+}
+
+/* 폰트 */
+@font-face {
+    font-family: 'ChosunBg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 
+scroll-padding-top: 0;
+scroll-snap-align : start end; */
