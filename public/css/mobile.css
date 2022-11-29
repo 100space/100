@@ -1,11 +1,8 @@
-@media(max-width : 750px){
-    /* html 영역 */
+@media(max-width : 768px){
 
 #wrap{
-    scroll-snap-type: y mandatory ;
+    scroll-snap-type: y mandatory;
 }
-
-
 
 /* header 영역 */
 #header_top{
@@ -57,32 +54,11 @@
     writing-mode: vertical-rl;
     width: 100px;
     height: 300px;
-    margin: 10px 0 0 165px;
+    margin: 10px 0 0 224px;
     font-size: 60px;
     font-family: 'ChosunBg';
     color: #377b7c;
 }
-
-
-#logo > a {
-    display: flex;
-    align-items: center
-}
-#logo > a > span{
-    display: inline-block;
-    top : 40px;
-    width: 100%;
-    word-break:break-all;
-    height: 100%;
-    margin: 50px 0 0 0 ;
-    font-size: 60px;
-    font-family: 'ChosunBg';
-}
-#logo > a > span:hover{
-    color : #377b7c;
-    transition-duration: 0.5s;
-}
-
 #gnb{
     display: none;
 }
@@ -90,71 +66,45 @@
 
 /* visual 영역 */
 #visual_wrap {
-    position: relative;
-    display: flex;
     width: 100%;
-    height:100%;
-    background-color: var(--main-color);
+    height: 100vh;
     scroll-snap-align: center;
-    
-    
+    overflow-y: scroll;
 }
-#visual {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    scroll-snap-type: y mandatory;  
+#w_visual {
+    display: none;
 }
-#about_card {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    scroll-snap-type: y mandatory;  
-    scroll-snap-align: center;
-    
-    
+#m_visual{
+    display: block;
 }
-#about_card > p {
-    height: 75vh;
-    width: 80%;    
-    margin: 7.5vh 10% 7.5vh 10%;
+#m_about_card{
+    display: block;
+    overflow-y:scroll;
+    scroll-snap-type: mandatory;
+}
+#m_about_card > p {
+    width: 90vw;
+    height: 94vh;
+    margin: 3vh 10% 3vh 10%;
     scroll-snap-align: center;
 }
-#photo {
-    position: sticky;
-    height: 75vh;
-    width: 80%;
-    margin: 15vh 10% 7.5vh 10%;
-    background-color: #fefefe;
-    scroll-snap-align: center;  
+.photo{
+    background-color: #fff;
+    background-attachment: fixed;
+}
 
-}
-#card1{
-    background-color: red;
-}
-#card2{
-    background-color: yellow;
-}
-#card3{
-    background-color: brown;
-}
-#card4{
-    background: blue;
-}
 
 /* project 영역 */
 
 #project_wrap{
-    scroll-snap-align: center;  
     display: flex;
     position: relative;
     justify-content: space-around;
-    width: 1920px;
-    height: 800px;
+    width: 100%;
+    height: 100vh;
     margin: 0 auto;
     padding-top: 150px;
+    scroll-snap-align: center;
 }
 #project_wrap > li{
     width: 300px;
