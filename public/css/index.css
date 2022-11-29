@@ -16,6 +16,13 @@ a{
     color: #333333;
     text-decoration: none;
 }
+a:hover{
+    cursor: pointer;
+}
+button{
+    border: none;
+    background:none;
+}
 
 
 
@@ -98,6 +105,10 @@ a{
     color : #fefefe;
     background-color: var(--main-color);
     transition-duration: 0.5s;
+    
+}
+#gnb > li > span > a {
+    font-family: 'ChosunLo';
 }
 .gnb_span {
     margin-right: -10px !important;
@@ -108,12 +119,12 @@ a{
     width: 78px !important;
     padding-top: 16px !important;
     letter-spacing: 0.5px;
-    padding: 16px 15px 15px 12px !important;
+    padding: 16px 15px 15px 8px !important;
 }
 .icon_position{
     background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 25% 50%;
+    background-size: 57%;
+    background-position: 50% 50%;
     width: 50px;
     height: 50px;
 }
@@ -124,7 +135,12 @@ a{
     width: 50px;
     height: 50px;
 }
-
+#m_gnb{
+    display: none;
+}
+#pointer_init > a > img {
+    display: none;
+}
 
 
 /* visual 영역 */
@@ -284,6 +300,12 @@ a{
 @font-face {
     font-family: 'ChosunBg';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunLo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
