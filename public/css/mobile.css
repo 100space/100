@@ -1,6 +1,6 @@
 @media(max-width : 768px){
 
-#wrap{
+html{
     scroll-snap-type: y mandatory;
 }
 
@@ -19,8 +19,11 @@
 }
 
 #header_wrap{
-    background-color: #ffffff;
-    scroll-snap-align: center;  
+    background-color: #fafafa;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;  
+    transition: all 500ms;
+
 }
 #header {
     width: 100vw;
@@ -30,14 +33,15 @@
     display: block;
     float: right;
     margin: 30px;
-    border: none;
     background: #ffffff;
+    font-size: large;
+    border: none;
 }
 #img {
     display: none;
 }
 #logo{
-    margin: 0 auto;
+    margin-right: 55% ;
     
 }
 #logo > a > .w_logo{
@@ -62,48 +66,136 @@
 #gnb{
     display: none;
 }
+#m_gnb{
+    display: inline-block;
+    position: absolute;
+    top:100px; bottom: 100px; left: 10vw; right: 10vw;
+    width: 80vw;
+    height: 120vw;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 15px #666;
+    border-radius: 10px;
+    transition: all 1s;
+    opacity: 1 ;
+}
+.m_gnb_off{
+    margin-top : -660px;
+    margin-left : 400px;
+    transition: all 1s;
+    opacity: 0 !important ;   
+}
+.close{
+    float: right;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color: #333333;
+    border: none;
+    background: none;
+}
 
+.m_gnb_menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+.gnb_span > a, .gnb_span2 > a {
+    font-size: 26px;
+    font-family: 'ChosunLo';
+    
+}
+.m_gnb_menu > li{
+    display: inline-block;
+}
+.m_gnb_menu > li > div {
+    margin: 0 auto;
+}
+#pointer_init > a > img{
+    display: inline-block;
+    position: absolute;
+    bottom:40px; 
+    right: calc( 50% - 25px ); 
+    width: 50px;
+    height: 100px;
+    animation-name: pointerInit ;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pointerInit {
+    0%, 100%{
+        margin-bottom: 0px;
+    }
+    50% {
+        margin-bottom:  20px;
+    }
+}
+.pointer_about {
+    float: right;
+}
+.pointer_about > a > img{
+    width: 100px;
+    height: 80px;
+}
 
 /* visual 영역 */
 #visual_wrap {
     width: 100%;
     height: 100vh;
     scroll-snap-align: center;
-    overflow-y: scroll;
+    scroll-snap-stop: always;
+    overflow-x:scroll;
+    scroll-snap-type: x mandatory;
+    background-color: #fafafa;
 }
 #w_visual {
     display: none;
 }
 #m_visual{
     display: block;
+    scroll-snap-stop: always;
 }
 #m_about_card{
-    display: block;
-    overflow-y:scroll;
-    scroll-snap-type: mandatory;
-}
-#m_about_card > p {
-    width: 90vw;
-    height: 94vh;
-    margin: 3vh 10% 3vh 10%;
+    display: flex;
     scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
-.photo{
+#m_about_card > ul {
+    width: 100vw;
+    height: 100vh;
+    padding: 20vh 5vw 20vh 5vw;
+    
+}
+.item {
+    scroll-snap-align: start;
+}
+
+.card_box {
+    width: 100%;
+    height: 100%;
     background-color: #fff;
-    background-attachment: fixed;
+    border: 3px solid #666;
+    border-radius: 15px;
 }
-
-
+.card_box > img {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #666;
+    border-radius: 15px;
+}
 /* project 영역 */
 
 #project_wrap{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-    justify-content: space-around;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    padding-top: 150px;
+    padding: 50px;
+    scroll-snap-stop: always;
     scroll-snap-align: center;
 }
 #project_wrap > li{
@@ -115,16 +207,14 @@
 }
 
 .off{
-    display: none;
+    display: none !important;
 }
 .on{
     display: inline-block;
     position: absolute;
     top : 100px ;
-    width: 1000px;
-    height: 600px;
-    background-color: #377b7c;
-    border: 5px solid rgba(180, 175, 175, 0.8);
+    width: 90%;
+    height: 80vh;
     border-radius: 30px;
 }
 
@@ -157,7 +247,6 @@
     width: 400px;
     height: 200px;
 }
-
 
 
 /* etc */
@@ -204,12 +293,9 @@
     font-weight: normal;
     font-style: normal;
 }
-/* 
-scroll-padding-top: 0;
-scroll-snap-align : start end; */
-}
-@media (max-width: 345px) {
-    *{
-        display: none;
-    }
+@font-face {
+    font-family: 'ChosunLo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

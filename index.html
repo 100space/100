@@ -7,6 +7,7 @@
     <title>BAEK'Space - 블록체인 개발자 백종환</title>
     <link href="./public/css/index.css" rel="stylesheet" type="text/css">
     <link href="./public/css/mobile.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/1066c48435.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="wrap">
@@ -27,11 +28,11 @@
                 <ul id ="gnb">
                     <li>
                         <div class="gnb_icon1 icon_position"></div>
-                        <span class ="gnb_span">HOME</span>
+                        <span class ="gnb_span"><a href="#header_wrap">HOME</a></span>
                     </li>
                     <li>
                         <div class="gnb_icon2 icon_position"></div>
-                        <span class ="gnb_span">ABOUT</span>
+                        <span class ="gnb_span"><a href="#visual_wrap">ABOUT</a></span>
                     </li>
                     <!-- <li style="width: 153px; justify-content: start;">
                         <div class="gnb_icon5 icon_position2"></div>
@@ -43,9 +44,35 @@
                     </li>
                     <li>
                         <div class="gnb_icon4 icon_position2"></div>
-                        <span class ="gnb_span2">CONTACT</span>
+                        <span class ="gnb_span2" style="letter-spacing: -0.7px;"><a href="#contact_wrap">CONTACT</a></span>
                     </li>
                 </ul>
+                <div id="m_gnb" class="m_gnb_off">
+                    <button class="close">&#10005</button>
+                    <ul class = "m_gnb_menu">
+                        <li>
+                            <div class="gnb_icon1 icon_position"></div>
+                            <span class ="gnb_span"><a href="#header_wrap">HOME</a></span>
+                        </li>
+                        <li>
+                            <div class="gnb_icon2 icon_position"></div>
+                            <span class ="gnb_span"><a href="#visual_wrap">ABOUT</a> </span>
+                        </li>
+                        <li>
+                            <div class="gnb_icon3 icon_position2"></div>
+                            <span class ="gnb_span2"><a href="#project_wrap">PROJECT</a></span>
+                        </li>
+                        <li>
+                            <div class="gnb_icon4 icon_position2"></div>
+                            <span class ="gnb_span2"><a href="#contact_wrap">CONTACT</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <button id="pointer_init">
+                    <a href="#visual_wrap">
+                        <img src="/public/img/pointer_init.png" alt="" >
+                    </a>
+                </button>
             </div>
         </div>
         <div id='visual_wrap'>
@@ -62,11 +89,18 @@
             </div>
             <div id="m_visual">
                 <div id="m_about_card">
-                    <p class="photo">사진</p>
-                    <p class="card1">1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br></p>
-                    <p class="card2">1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1</p>
-                    <p class="card3">1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1</p>
-                    <p class="card4">1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1</p>
+                    <ul id="visual_card1" class="card item">
+                        <li class="card_box" >
+                           <img src="/public/img/KakaoTalk_Photo_2022-11-29-15-45-46.jpeg"> 
+                        </li>
+                        <li class ="pointer_about" >
+                            <a href="#visual_card2"><img src="/public/img/pointer_about_me.png" alt=""></a>
+                        </li>
+                    </ul>
+                    <ul id="visual_card2" class="card item"><li class="card_box"></li></ul>
+                    <ul id="visual_card3" class="card item"><li class="card_box"></li></ul>
+                    <ul id="visual_card4" class="card item"><li class="card_box"></li></ul>
+                    <ul id="visual_card5" class="card item"><li class="card_box"></li></ul>
                 </div>
             </div>
             
