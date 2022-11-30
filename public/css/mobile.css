@@ -2,6 +2,7 @@
 
 html{
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 /* header 영역 */
@@ -13,13 +14,13 @@ html{
     width: 80%;
     height: 30%;
     font-family: 'ChosunBg';
+
 }
 #header_top{
     font-size: 45px;
 }
 
 #header_wrap{
-    background-color: #fafafa;
     scroll-snap-align: center;
     scroll-snap-stop: always;  
     transition: all 500ms;
@@ -34,7 +35,7 @@ html{
     float: right;
     margin: 30px;
     background: #ffffff;
-    font-size: large;
+    font-size: 30px;
     border: none;
 }
 #img {
@@ -49,19 +50,28 @@ html{
 }
 
 #logo > a >.m_logo1{
+    font-family: 'GmarketSansBold';
+    font-size: 60px;
     display: block;
     width: 300px;
-    padding : 0 0 0 30px;
+    padding : 0 0 0 50px;
+    text-shadow: 5px 4px #33333360;
 }
 .m_logo2{
     display:block;
     writing-mode: vertical-rl;
     width: 100px;
     height: 300px;
-    margin: 10px 0 0 224px;
-    font-size: 60px;
+    margin: -7px 0 0 220px;
+    font-size: 52px;
+    font-family: 'GmarketSansBold';
+    color: var(--main-color);
+    /* text-shadow: 3px 5px var(--main-shadow) ; */
+}
+.typing{
     font-family: 'ChosunBg';
-    color: #377b7c;
+    text-shadow: 2px 1px #33333360;
+
 }
 #gnb{
     display: none;
@@ -101,8 +111,8 @@ html{
     margin-top: 80px;
 }
 .gnb_span > a, .gnb_span2 > a {
-    font-size: 26px;
-    font-family: 'ChosunLo';
+    font-size: 20px;
+    font-family: 'GmarketSansMedium';
     
 }
 .m_gnb_menu > li{
@@ -114,10 +124,10 @@ html{
 #pointer_init > a > img{
     display: inline-block;
     position: absolute;
-    bottom:40px; 
+    bottom:30px; 
     right: calc( 50% - 25px ); 
     width: 50px;
-    height: 100px;
+    height: 50px;
     animation-name: pointerInit ;
     animation-duration: 800ms;
     animation-iteration-count: infinite;
@@ -131,13 +141,6 @@ html{
         margin-bottom:  20px;
     }
 }
-.pointer_about {
-    float: right;
-}
-.pointer_about > a > img{
-    width: 100px;
-    height: 80px;
-}
 
 /* visual 영역 */
 #visual_wrap {
@@ -145,9 +148,9 @@ html{
     height: 100vh;
     scroll-snap-align: center;
     scroll-snap-stop: always;
+    background-color: #fafafa;
     overflow-x:scroll;
     scroll-snap-type: x mandatory;
-    background-color: #fafafa;
 }
 #w_visual {
     display: none;
@@ -158,15 +161,20 @@ html{
 }
 #m_about_card{
     display: flex;
-    scroll-snap-align: center;
+    scroll-snap-align: start end;
     scroll-snap-stop: always;
 }
-#m_about_card > ul {
+#m_about_card > div {
     width: 100vw;
     height: 100vh;
     padding: 20vh 5vw 20vh 5vw;
+    scroll-snap-align: start end;
+    scroll-snap-stop: always;
     
 }
+/* #m_about_card > div:nth-child(2n){
+    background-color: #377b7c20;
+} */
 .item {
     scroll-snap-align: start;
 }
@@ -174,15 +182,84 @@ html{
 .card_box {
     width: 100%;
     height: 100%;
-    background-color: #fff;
-    border: 3px solid #666;
+    padding: 20px;
+    background-color: #377b7c20;
+    border: 2px solid #666;
     border-radius: 15px;
 }
 .card_box > img {
-    width: 100%;
-    height: 100%;
-    border: 3px solid #666;
+    width: 101%;
+    height: 101%;
     border-radius: 15px;
+}
+/*Visual_Card 하단 pointer*/
+.pointer_r{
+    float: right;
+}
+.pointer_r > a > img{
+    width: 80px;
+    height: 60px;
+    margin-top : -3px
+}
+.pointer_l{
+    float: left;
+}
+.pointer_l > a > img{
+    width: 80px;
+    height: 60px;
+}
+/*Visual_card 내용 CSS*/
+.item > h2 {
+    position: absolute;
+    top : 120px;
+    left: 30px;
+    font-size: 30px;
+    color: #377b7c;
+    text-shadow: 3px 1.5px #377b7c60 ;
+    font-family: 'ChosunBg';
+
+}
+
+.card_box > h2{
+    margin: 0 0 50px 0;
+    font-size: 30px;
+    color: #377b7c;
+    text-shadow: 3px 1.5px #377b7c60 ;
+    font-family: 'ChosunBg';
+}
+.gith_history{
+    width: 40vw;
+    height: 40vh;
+    margin-left: 10px;
+}
+.date {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'GmarketSansMedium';
+}
+.contents_title {
+    font-size: 24px;
+    word-break:keep-all;
+    font-family: 'GmarketSansMedium';
+    font-weight: 700;
+}
+.contents {
+    margin-top: 50px;
+    font-size: 16px;
+    color:var(--contents-color);
+    font-family: 'GmarketSansMedium';
+
+}
+/*skills*/
+
+#first{
+    margin-top : 0;
+}
+
+
+#w_typing{
+    display: none;
 }
 /* project 영역 */
 
@@ -190,6 +267,7 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     position: relative;
     width: 100%;
     height: 100vh;
@@ -197,14 +275,24 @@ html{
     padding: 50px;
     scroll-snap-stop: always;
     scroll-snap-align: center;
+    overflow-x: scroll;
 }
 #project_wrap > li{
     width: 300px;
     height: 500px;
     border: 5px solid rgba(180, 175, 175, 0.8);
     border-radius: 30px;
-    background: #333333;
+    background-color: #e4eaea;
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
+    background-attachment: fixed;
 }
+#project_wrap > li > div{
+    height: 130px;
+    width: 250px;
+    margin: 0 auto;
+}
+
 
 .off{
     display: none !important;
@@ -248,54 +336,4 @@ html{
     height: 200px;
 }
 
-
-/* etc */
-#gnb > li:hover > .gnb_icon1{
-    background-image: url("/public/img/home_hover.png");
-    
-}
-.gnb_icon1{
-    background-image: url("/public/img/home_basic.png");
-}
-#gnb > li:hover > .gnb_icon2{
-    background-image: url("/public/img/id-card_hover.png");
-    
-}
-.gnb_icon2{
-    background-image: url("/public/img/id-card_basicpng.png");
-}
-#gnb > li:hover > .gnb_icon3{
-    background-image: url("/public/img/paper_hover.png");
-    
-}
-.gnb_icon3{
-    background-image: url("/public/img/paper_basic.png");
-}
-#gnb > li:hover > .gnb_icon4{
-    background-image: url("/public/img/contact_hover.png");
-    
-}
-.gnb_icon4{
-    background-image: url("/public/img/contact_basic.png");
-}
-#gnb > li:hover > .gnb_icon5{
-    background-image: url("/public/img/expre-hover.png");
-    
-}
-.gnb_icon5{
-    background-image: url("/public/img/expre-basic.png");
-}
-
-/* 폰트 */
-@font-face {
-    font-family: 'ChosunBg';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ChosunLo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }

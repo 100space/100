@@ -3,11 +3,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+#m_visual{
+    scroll-behavior: smooth ;
 }
 :root{
     /* color */
     --main-color : #377b7c;
+    --main-shadow : #377b7c60;
+    --contents-color : #777777;
+
     /* --font-color */
+    
 }
 ul, li {
     list-style: none;
@@ -31,7 +39,7 @@ button{
     display: none;
 }
 #header_wrap{
-    background-color: #ffffff;    
+    background-color: #fafafa;    
 }
 #header {
     /* display: flex; */
@@ -67,7 +75,10 @@ button{
     top : 40px;
     margin: 50px 0 0 0 ;
     font-size: 80px;
-    font-family: 'ChosunBg';
+    font-family: 'GmarketSansBold';
+    font-weight: 700;
+    text-shadow: 5px 4px #33333360;
+    
 }
 #logo > a > span:hover{
     color : #377b7c;
@@ -84,7 +95,7 @@ button{
 }
 #gnb > li {
     display: flex;
-    justify-content: end;
+    justify-content: flex-start;
     width: 130px;
     height: 50px;
     margin-top: 27px;
@@ -108,7 +119,8 @@ button{
     
 }
 #gnb > li > span > a {
-    font-family: 'ChosunLo';
+    font-family: 'GmarketSansMedium';
+    font-size: 16px;
 }
 .gnb_span {
     margin-right: -10px !important;
@@ -148,27 +160,28 @@ button{
     position: relative;
     display: flex;
     width: 100%;
-    height: 850px;
+    height: 700px;
     background-color: var(--main-color);
     background-attachment: fixed;
 }
 #w_visual {
     display: flex;
+    justify-content: center;
     width: 1200px;
-    height: 800px;
+    height: 650px;
     margin: 0 auto;
 }
 #m_visual {
    display: none;
 }
 #about_card {
+    margin: 0 50px 0 50px;
     overflow: scroll;
     scroll-snap-type: y mandatory;
-    
 }
-#about_card > p {
-    width: 500px;
-    height: 750px;
+#about_card > ul {
+    width: 400px;
+    height: 600px;
     margin-top: 50px;
     scroll-margin-top: 50px ;
     scroll-snap-align : center;
@@ -176,22 +189,122 @@ button{
 }
 #photo {
     position: sticky;
-    height: 750px;
-    width: 500px;
+    height: 600px;
+    width: 400px;
     margin: 50px;
-    background-color: #fefefe;
+    padding: 20px;
+    background-color: #e4eaea;
+    border-radius: 15px;
+    border: 2px solid #333;
+}
+#photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #e4eaea;
+
 }
 .card1{
-    background-color: red;
+    background-color: #e4eaea;
+    border-radius: 15px;
+    border: 2px solid #333;
+    padding : 30px
 }
-.card2{
-    background-color: yellow;
+#card1_img{
+    display: inline-block;
+    width: 58%;
+    height: 70%;
+}   
+.card1 > #about_me_contents {
+    float: right;
+    width: 42%;
+    height: 70%;
+    margin: 30px 0 0 0;
+    padding: 0 20px 0 10px;
+    border-left: 3px dotted #777777;
 }
-.card3{
-    background-color: brown;
+.card1 > h2 {
+    padding : 10px 0 0 10px;
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #377b7c;
+    text-shadow: 3px 1.5px #377b7c60 ;
+    font-family: 'GmarketSansMedium';
+    font-weight: 800;
 }
-.card4{
-    background: blue;
+.card1 > div > img{
+    height: 100%;
+    margin: 30px 0 0 10px;
+}
+
+.date {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'GmarketSansMedium';
+}
+.contents_title {
+    font-size: 24px;
+    word-break:keep-all;
+    font-family: 'GmarketSansMedium';
+    font-weight: 700;
+}
+.contents {
+    margin-top: 50px;
+    font-size: 16px;
+    color:var(--contents-color);
+    font-family: 'GmarketSansMedium';
+
+}
+
+/*skills 영역*/
+
+.skill_icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+}
+.skill_icon > img{
+    width: 50px;
+    height: 50px;
+}
+.skill_icon > span{
+    margin-top: 10px;
+    text-align: center;
+    font-family:  'GmarketSansMedium';
+    color:var(--contents-color);
+}
+#first{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+#seconds{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+#third{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+
+#w_typing>span{
+    display: block;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    font-family: 'ChosunBg';
+    text-shadow: 3px 2px #33333360;
+    font-size: 60px;
+    padding: 40px;
+}
+.typing{
+    height: 150px;
+    margin: 0 auto;
 }
 
 /* project 영역 */
@@ -203,16 +316,23 @@ button{
     width: 100%;
     height: 800px;
     margin: 0 auto;
-    padding-top: 150px;
+    /* padding-top: 150px; */
 }
 #project_wrap > li{
     width: 300px;
     height: 500px;
+    padding: 15px 10px 10px 10px;
     border: 5px solid rgba(180, 175, 175, 0.8);
     border-radius: 30px;
-    background: #333333;
+    background-color: #e4eaea;
 }
 
+#project_wrap > li >h3 {
+    text-align: center;
+    margin : 20px;
+    font-size: 32px;
+    font-family: "GmarketSansMedium" ;
+}
 .off{
     display: none;
 }
@@ -253,11 +373,20 @@ button{
 .project_photo > li {
     display: inline-flex;
     margin: 0 15px 0 15px;
-    width: 400px;
+    width: 300px;
     height: 200px;
 }
-
-
+#project_wrap > li > div{
+    width: 100%;
+    height: 40%;
+   
+}
+.pj1_main_img{
+    background-image: url(/public/img/test_img/test1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
 
 /* etc */
 #gnb > li:hover > .gnb_icon1{
@@ -304,11 +433,26 @@ button{
     font-style: normal;
 }
 @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'ChosunLo';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-/* 
-scroll-padding-top: 0;
-scroll-snap-align : start end; */
+@font-face {
+    font-family: 'ChosunSg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
