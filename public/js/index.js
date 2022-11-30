@@ -52,25 +52,41 @@ info_exit2.addEventListener("click", exitbutton)
 info_exit3.addEventListener("click", exitbutton)
 info_exit4.addEventListener("click", exitbutton)
 
-const content = "I'm \n BlockChain \n Developer \n \n 백종환 \n\n\n\n\n\n";
-const text = document.querySelector("#typing");
-let i = 0;
 
-// function sleep(delay) {
-//     let start = new Date().getTime();
-//     while (new Date().getTime() < start + delay);
-// }
-
-function typing(){
-    let txt = content[i++];
-    text.innerHTML += txt=== "\n" ? "<br/>": txt;
-    if (i > content.length) {
-        // sleep(500)
-        text.textContent = "";
-        i = 0;
+/* mobile일 때는 id=typing으로 추적 */
+if(screen.width <769){
+    const content = " I'm \n BlockChain \n Developer \n \n 백종환 \n\n\n\n\n\n";
+    const text = document.querySelector(".typing");
+    console.log(text)
+    let i = 0;
+    
+    function typing(){
+        let txt = content[i++];
+        text.innerHTML += txt=== "\n" ? "<br/>": txt;
+        if (i > content.length) {
+            text.textContent = "";
+            i = 0;
+        }
     }
+    setInterval(typing, 150)
+
+}else{
+    /* web일 때는 id=typing으로 추적 */
+    const textcon = " I'm \n BlockChain \n Developer \n \n 백종환 \n\n\n\n\n\n";
+    const text2 = document.querySelector("#typing");
+    let i=0
+    function typing2(){
+        let txt = textcon[i++];
+        text2.innerHTML += txt=== "\n" ? "": txt;
+        if (i > textcon.length) {
+            text2.textContent = "";
+            i = 0;
+        }
+    }
+    setInterval(typing2, 150)
+
 }
-setInterval(typing, 150)
+
 
 const menuBtn = document.querySelector("#menu_icon")
 const mMenuBtn = document.querySelector("#m_gnb")
@@ -117,9 +133,23 @@ function contactBtnHandler(e){
 }
 contactBtn.addEventListener("click",contactBtnHandler)
 
-const prePoint = window.pageYOffset
-// console.log(prePoint)
-// console.log(screen)
-// console.log(screenX)
-// console.log(screenY)
-console.log(visualViewport)
+console.log(scrollY)
+const mVisual = document.querySelector("#m_visual")
+const mAboutCard = document.querySelector("#m_about_card")
+const returnCard = document.querySelector("#visual_card1")
+const project = document.querySelector("#project_wrap")
+const projectClosed = document.querySelectorAll(".project_close")
+console.log(returnCard.getBoundingClientRect())
+console.log(mAboutCard.getBoundingClientRect())
+
+window.addEventListener("scroll", function(e){
+    // console.log(this.scrollY)
+    const screenY = this.scrollY
+    if(screenY === 900 ){
+        // this.document.style.scrollBehavior = "smooth";
+        returnCard.scrollIntoView({Behavior:'smooth'})
+        
+    }
+})
+
+
