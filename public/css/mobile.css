@@ -24,7 +24,7 @@ html{
     scroll-snap-align: center;
     scroll-snap-stop: always;  
     transition: all 500ms;
-
+    height: 100vh;
 }
 #header {
     width: 100vw;
@@ -148,9 +148,19 @@ html{
     height: 100vh;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    background-color: #fafafa;
+    background-color: #fafafa !important;
     overflow-x:scroll;
     scroll-snap-type: x mandatory;
+}
+@keyframes projectz {
+    0%, 100%{
+        transform: scale(1);
+
+    }
+    50% {
+        transform: scale(1.01);
+
+    }
 }
 #w_visual {
     display: none;
@@ -172,9 +182,6 @@ html{
     scroll-snap-stop: always;
     
 }
-/* #m_about_card > div:nth-child(2n){
-    background-color: #377b7c20;
-} */
 .item {
     scroll-snap-align: start;
 }
@@ -186,10 +193,11 @@ html{
     background-color: #377b7c20;
     border: 2px solid #666;
     border-radius: 15px;
+    /* overflow-y: scroll; */
 }
 .card_box > img {
-    width: 101%;
-    height: 101%;
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
 }
 /*Visual_Card 하단 pointer*/
@@ -221,16 +229,41 @@ html{
 }
 
 .card_box > h2{
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
     font-size: 30px;
     color: #377b7c;
     text-shadow: 3px 1.5px #377b7c60 ;
     font-family: 'ChosunBg';
 }
+.card_box > h4{
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: #377b7c;
+    font-family: 'ChosunBg';
+}   
 .gith_history{
     width: 40vw;
-    height: 40vh;
+    height: 44vh;
+    margin-top: 20px;
     margin-left: 10px;
+}
+.about_me_contents {
+    width: 33vw;
+    height: 45vh;
+    margin: 20px 0 0 0;
+    font-size: 12px;
+    padding: 0 20px 0 10px;
+    border-left: 3px dotted #777777;
+}
+.first_his {
+    grid-area: first;
+}
+
+.seconds_his{
+    grid-area: seconds;
+}
+.thrid_his{
+    grid-area: thrid ;
 }
 .date {
     font-weight: bold;
@@ -264,22 +297,23 @@ html{
 /* project 영역 */
 
 #project_wrap{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 100% ;
+    grid-template-rows: repeat(4, 22.3%) ;
+    grid-gap: 30px;
     position: relative;
     width: 100%;
     height: 100vh;
-    margin: 0 auto;
-    padding: 50px;
+    /* margin: 0 auto; */
+    padding: 30px;
     scroll-snap-stop: always;
     scroll-snap-align: center;
     overflow-x: scroll;
 }
 #project_wrap > li{
-    width: 300px;
-    height: 500px;
+    width: 100%;
+    height: 190px;
+    margin-top: 0;
     border: 5px solid rgba(180, 175, 175, 0.8);
     border-radius: 30px;
     background-color: #e4eaea;
@@ -288,11 +322,15 @@ html{
     background-attachment: fixed;
 }
 #project_wrap > li > div{
-    height: 130px;
-    width: 250px;
+    height: 110px;
     margin: 0 auto;
 }
-
+#project_wrap > li >h3 {
+    margin : 10px;
+}
+.project_form{
+    display: none;
+}
 
 .off{
     display: none !important;
@@ -300,10 +338,11 @@ html{
 .on{
     display: inline-block;
     position: absolute;
-    top : 100px ;
+    top : 100px ; left: 10px; right: 10px;
     width: 90%;
     height: 80vh;
     border-radius: 30px;
+    margin: 0 auto;
 }
 
 #project_wrap > li:hover {
@@ -324,16 +363,81 @@ html{
     font-size: 30px;
     color: #333333;
 }
+
+.info_table {
+    width: 90%;
+    border: 4px solid #333333;
+    height: 43vh !important;
+    margin: 35px auto 20px;
+}
+.info_table > ul {
+    display: flex;
+    height: 20%;
+    border: 1px solid #333333;
+    text-align: left;
+}
+.info_table > ul > li{
+    height: auto;
+    margin: auto 0 ;
+}
+.info_table > ul > li:nth-child(1) {
+    width: 30%;
+    font-size: 16px;
+    word-break: keep-all;
+    text-align: center;
+}
+.info_table > ul > li:nth-child(2) {
+    width: 70%;
+    font-size: 12px;
+    word-break: keep-all;
+    padding-left: 20px;
+    border-left: 1px solid #333333;
+}
 .project_photo {
     white-space:nowrap; 
     overflow-y:hidden;
-    padding : 0 15px 0 15px
+    padding : 0 15px 0 15px;
+    margin: 10px;
 }
 .project_photo > li {
     display: inline-flex;
     margin: 0 15px 0 15px;
     width: 400px;
     height: 200px;
+}
+#back{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: calc(50vw - 35px);
+    bottom:80px;
+    z-index: 999;
+    transform: scaleY(-1);
+}
+
+#contact_wrap{
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;  
+}
+.contact_form {
+    width: 100%;
+    height: 160px;
+    padding: 10px;
+}
+.contact_form >div > div {
+    margin-top: 20px;
+    font-weight: 700;
+}
+#contact {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    grid-template-columns: 260px;
+    grid-template-rows: 200px;
 }
 
 }
