@@ -10,7 +10,8 @@ const info_exit4 = document.querySelector("#project4_info > div > button")
 
 
 function clickHandler(e){
-    const target = e.target
+    const target = e.target.offsetParent
+    // console.dir(target.offsetParent)
     if(target.id.indexOf("project1")!==-1){
         project1_info.className="on"
         project2_info.className="off"
@@ -117,7 +118,6 @@ function homeBtnHandler(e){
 }
 homeBtn.addEventListener("click",homeBtnHandler)
 
-
 function aboutBtnHandler(e){
     mMenuBtn.classList.toggle('m_gnb_off')
 }
@@ -145,7 +145,7 @@ console.log(mAboutCard.getBoundingClientRect())
 window.addEventListener("scroll", function(e){
     // console.log(this.scrollY)
     const screenY = this.scrollY
-    if(screenY === 900 ){
+    if(screenY == 900 ){
         // this.document.style.scrollBehavior = "smooth";
         returnCard.scrollIntoView({Behavior:'smooth'})
         
