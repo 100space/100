@@ -56,7 +56,7 @@ info_exit4.addEventListener("click", exitbutton)
 
 /* mobile일 때는 id=typing으로 추적 */
 if(screen.width <769){
-    const content = " I'm \n BlockChain \n Developer \n \n 백종환 \n\n\n\n\n\n";
+    const content = " I'm\nBlockChain \n Developer \n \n 백종환 \n\n\n\n\n\n";
     const text = document.querySelector(".typing");
     console.log(text)
     let i = 0;
@@ -87,7 +87,6 @@ if(screen.width <769){
     setInterval(typing2, 150)
 
 }
-
 
 const menuBtn = document.querySelector("#menu_icon")
 const mMenuBtn = document.querySelector("#m_gnb")
@@ -137,19 +136,27 @@ console.log(scrollY)
 const mVisual = document.querySelector("#m_visual")
 const mAboutCard = document.querySelector("#m_about_card")
 const returnCard = document.querySelector("#visual_card1")
-const project = document.querySelector("#project_wrap")
+// const project = document.querySelector("#project_wrap")
 const projectClosed = document.querySelectorAll(".project_close")
-console.log(returnCard.getBoundingClientRect())
-console.log(mAboutCard.getBoundingClientRect())
+// console.log(returnCard.getBoundingClientRect())
+// console.log(mAboutCard.getBoundingClientRect())
 
 window.addEventListener("scroll", function(e){
-    // console.log(this.scrollY)
     const screenY = this.scrollY
     if(screenY == 900 ){
-        // this.document.style.scrollBehavior = "smooth";
         returnCard.scrollIntoView({Behavior:'smooth'})
         
     }
 })
 
+const loading = document.querySelector("#loading")
+const classLoading = document.querySelector(".loading")
+
+
+function loadHandler(){
+    loading.classList.add('off')
+    classLoading.classList.add('off')
+}
+
+setTimeout(loadHandler, 2800);
 
