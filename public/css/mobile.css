@@ -4,7 +4,12 @@ html{
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
-
+#loading{
+    display: none;
+}
+.loading{
+    display: none;
+}
 /* header 영역 */
 #header_top{
     display: inline-block;
@@ -88,6 +93,10 @@ html{
     transition: all 1s;
     opacity: 1 ;
 }
+#m_gnb > img {
+    position: absolute;
+    left: 6.5rem;
+}
 .m_gnb_off{
     margin-top : -660px;
     margin-left : 400px;
@@ -168,6 +177,7 @@ html{
 #m_visual{
     display: block;
     scroll-snap-stop: always;
+    scroll-behavior: smooth ;
 }
 #m_about_card{
     display: flex;
@@ -399,7 +409,7 @@ html{
     padding : 0 15px 0 15px;
     margin: 10px;
 }
-.project_photo > li {
+.project_photo > a > li {
     display: inline-flex;
     margin: 0 15px 0 15px;
     width: 400px;
@@ -424,7 +434,7 @@ html{
 }
 .contact_form {
     width: 100%;
-    height: 160px;
+    height: 170px;
     padding: 10px;
 }
 .contact_form >div > div {
@@ -433,11 +443,45 @@ html{
 }
 #contact {
     display: grid;
+    align-items: center;
     width: 100%;
     height: 100%;
     margin: auto;
     grid-template-columns: 260px;
-    grid-template-rows: 200px;
+    grid-template-rows: auto;
 }
+#footer_wrap {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    height: 100vh;
+    width: 100vw;
+}
+#footer {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
+}
+#footer > div {
+    margin-right: 22px;
+    width: 255px;
+    word-break: keep-all;
+    text-align: end;
 
+}
+#footer > div > span {
+    width: 100%;
+}
+#footer_logo{
+    margin : 0
+}
+.footer_name{
+    margin-bottom: 10px;
+}
+.footer_copyright{
+    margin-top: 20px;
+    font-size: 12px;
+}
 }

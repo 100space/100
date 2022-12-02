@@ -8,9 +8,7 @@
 html{
     scroll-behavior: smooth ;
 }
-#m_visual{
-    scroll-behavior: smooth ;
-}
+
 :root{
     /* color */
     --main-color : #377b7c;
@@ -35,6 +33,81 @@ button{
     background:none;
 }
 
+.loading{
+    position: absolute;
+    width: 100vw;
+    height: 200vh;
+    background-color: #2c2828dd;
+    z-index: 50;
+    animation-name: loadinglogo2 ;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+}
+@keyframes loadinglogo2{
+    0%{
+        background-color: #2c2828;
+        color:#fff ;
+    }
+    100%{
+        background-color: #c9c0c0dd;
+        color: #000;
+    }
+}
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30vh;
+}
+#loading >span {
+    font-size: 3rem;
+    margin-top: 3rem;
+    font-family: 'GmarketSansBold';
+}
+
+#loading > img {
+    width: 20vw;
+    height: 20vw;
+    animation-name: loadinglogo ;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+}
+@keyframes loadinglogo{
+    0%{
+        transform: rotate(0deg);
+
+        
+    }
+    50%{
+        margin-top: -24vh;
+        width: 6.25rem;
+        height: 6.25rem;
+    }
+    75%{
+        margin-top: -24vh;
+        width: 6.25rem;
+        height: 6.25rem;
+
+    }
+    95%{
+        transform: rotate(360deg);
+        margin-top: -24vh;
+        width: 6.25rem;
+        height: 6.25rem;
+        opacity: 0.8;
+    }
+    100%{
+        transform: rotate(360deg);
+        margin-top: -24vh;
+        width: 6.25rem;
+        height: 6.25rem;
+        opacity: 0;
+
+        
+    }
+}
+
+
 
 /* header 영역 */
 #header_top {
@@ -45,8 +118,6 @@ button{
     height: 20vh;
 }
 #header {
-    /* display: flex; */
-    /* justify-content: center; */
     align-items: center;
     width: 1200px;
     height: 75px;
@@ -60,7 +131,7 @@ button{
     color: #333333;
 }
 .m_logo2{
-    display: none;
+    display: none ;
 }
 #logo {
     display: block;
@@ -163,7 +234,7 @@ button{
     position: relative;
     display: flex;
     width: 100%;
-    height: 700px;
+    height: 650px;
     background: var(--main-color);
     background-attachment: fixed;
 }
@@ -172,7 +243,7 @@ button{
     justify-content: center;
     width: 1200px;
     height: 650px;
-    margin: 25px auto 75px;
+    margin: 25px auto ;
 }
 #m_visual {
    display: none;
@@ -360,15 +431,15 @@ button{
     position: relative;
     justify-content: space-around;
     width: 100%;
-    height: 600px;
+    height: 560px;
     margin: 0 auto;
     background : #fafafa;
 }
 #project_wrap > li{
     width: 300px;
-    height: 500px;
+    height: 480px;
     padding: 15px 10px 10px 10px;
-    margin-top: 50px;
+    margin-top: 70px;
     border: 5px solid rgba(180, 175, 175, 0.8);
     box-shadow: 5px 5px 15px #666;
     border-radius: 30px;
@@ -405,24 +476,27 @@ button{
     margin-top: 30px;
 }
 .off{
-    display: none;
+    display: none !important;
 }
 .on{
     display: inline-block;
     position: absolute;
     top : 100px;
     margin: 0 auto;
+
     width: 1000px;
     height: 600px;
-    background-color: #83afb0;
+    background-color: #448f90;
     border: 5px solid rgba(180, 175, 175, 0.8);
     border-radius: 30px;
 }
 .info_table {
     width: 80%;
     border: 4px solid #333333aa;
+    border-radius: 15px;
     height: 45% !important;
     margin: 35px auto 20px;
+    background-color: #e4eaeac1;
 }
 .info_table > ul {
     display: flex;
@@ -441,7 +515,7 @@ button{
 }
 .info_table > ul > li:nth-child(2) {
     width: 70%;
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 20px;
     border-left: 1px solid #333333;
 }
@@ -469,7 +543,7 @@ button{
     overflow-y:hidden;
     padding : 0 15px 0 15px
 }
-.project_photo > li {
+.project_photo > a > li {
     display: inline-flex;
     margin: 0 15px 0 15px;
     width: 300px;
@@ -482,32 +556,6 @@ button{
     height: 40%;
    
 }
-/*프로젝트 대표 이미지 */
-.pj1_main_img{
-    background-image: url(/public/img/test_img/test5.gif);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border-radius: 15px;
-
-}
-.pj2_main_img{
-    background-image: url(/public/img/test_img/test2.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border-radius: 15px;
-}
-.pj3_main_img{
-    background-image: url(/public/img/test_img/test3.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border-radius: 15px;
-}
-.pj4_main_img{
-    background-image: url(/public/img/test_img/test1.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border-radius: 15px;
-}
 
 
 /*contact 영역*/
@@ -518,7 +566,7 @@ button{
     grid-template-columns: 250px 250px 250px 250px;
     width: 100%;
     height: 350px;
-    padding: 50px;
+    padding: 20px 50px ;
     background : #fafafa;
 }
 #contact {
@@ -527,7 +575,6 @@ button{
     margin: 0 auto;
     width: 100%;
     height: 250px;
-    
 }
 .contact_form{
     display: flex;
@@ -555,14 +602,59 @@ button{
     border-radius: 60px;
     background-color: #377b7c;
     padding: 20px;
-
 }
 .contact_icon > a >img {
     width: 60px;
-    height: 60px;
-    
-
+    height: 60px;   
 }
+
+/*footer 영역*/
+#footer_wrap {
+    width: 100%;
+    height: 100px;
+    background-color: #666;
+}
+#footer_wrap > span{
+    margin: 0 auto;
+    width: 1000px;
+}
+#footer{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+}
+#footer > div > span{
+    display: inline-block;
+    font-size: 14px;
+    color: rgb(164, 164, 164);
+}
+.footer_img{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+#footer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#footer_logo{
+    margin: 0 50px 0 0;
+}
+.footer_name{
+    width: 120px;
+}
+.footer_mail{
+    width: 120px;
+}
+.footer_copyright{
+    margin-top: 6px;
+    font-size: 20px !important;
+}
+
+/* Back to TOP 버튼*/
 #back{
     display: inline-block;
     width: 70px;
@@ -573,7 +665,11 @@ button{
     z-index: 999;
     transform: scaleY(-1);
 }
-/* etc */
+
+
+
+
+/* gnb 아이콘 */
 #gnb > li:hover > .gnb_icon1{
     background-image: url("/public/img/home_hover.png");
     
@@ -609,6 +705,88 @@ button{
 .gnb_icon5{
     background-image: url("/public/img/expre-basic.png");
 }
+
+/*프로젝트 1 이미지 */
+.pj1_main_img{
+    background-image: url(/public/img/test_img/test5.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+}
+.pj1_sub_img1{
+    background-image: url(/public/img/test_img/test1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+}
+.pj1_sub_img2{
+    background-image: url(/public/img/test_img/test2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+}
+
+/*프로젝트 2 이미지*/
+.pj2_main_img{
+    background-image: url(/public/img/test_img/test2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 15px;
+}
+.pj2_sub_img1{
+    background-image: url(/public/img/test_img/test3.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+}
+.pj2_sub_img2{
+    background-image: url(/public/img/test_img/test1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+}
+
+
+/*프로젝트 3 이미지*/
+.pj3_main_img{
+    background-image: url(/public/img/test_img/test3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 15px;
+}
+.pj3_sub_img1{
+    background-image: url(/public/img/test_img/test2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+}
+.pj3_sub_img2{
+    background-image: url(/public/img/test_img/test4.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+}
+
+/*프로젝트 4 이미지 */
+.pj4_main_img{
+    background-image: url(/public/img/test_img/test1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 15px;
+}
+.pj4_sub_img1{
+    background-image: url(/public/img/test_img/test3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 15px;
+}
+.pj4_sub_img2{
+    background-image: url(/public/img/test_img/test4.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 15px;
+}
+
 
 /* 폰트 */
 @font-face {
