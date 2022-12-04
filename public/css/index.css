@@ -5,7 +5,8 @@
     box-sizing: border-box;
     font-family: 'GmarketSansMedium';
 }
-html{
+
+body{
     scroll-behavior: smooth ;
 }
 
@@ -115,7 +116,7 @@ button{
 }
 #header_wrap{
     background-color: #fafafa;
-    height: 20vh;
+    height: 18vh;
 }
 #header {
     align-items: center;
@@ -234,7 +235,7 @@ button{
     position: relative;
     display: flex;
     width: 100%;
-    height: 650px;
+    height: 680px;
     background: var(--main-color);
     background-attachment: fixed;
 }
@@ -478,6 +479,7 @@ button{
 .off{
     display: none !important;
 }
+
 .on{
     display: inline-block;
     position: absolute;
@@ -556,6 +558,9 @@ button{
     height: 40%;
    
 }
+#info_btn{
+    display: none ;
+}
 
 
 /*contact 영역*/
@@ -611,7 +616,7 @@ button{
 /*footer 영역*/
 #footer_wrap {
     width: 100%;
-    height: 100px;
+    height: 110px;
     background-color: #666;
 }
 #footer_wrap > span{
@@ -621,6 +626,7 @@ button{
 #footer{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 1000px;
     height: 100px;
     margin: 0 auto;
@@ -632,8 +638,8 @@ button{
 }
 .footer_img{
     margin: auto;
-    width: 100px;
-    height: 100px;
+    width: 5.5rem;
+    height: 5.5rem;
 }
 #footer > div {
     display: flex;
@@ -730,7 +736,7 @@ button{
 .pj2_main_img{
     background-image: url(/public/img/test_img/test2.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     border-radius: 15px;
 }
 .pj2_sub_img1{
@@ -751,7 +757,7 @@ button{
 .pj3_main_img{
     background-image: url(/public/img/test_img/test3.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     border-radius: 15px;
 }
 .pj3_sub_img1{
@@ -771,19 +777,19 @@ button{
 .pj4_main_img{
     background-image: url(/public/img/test_img/test1.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     border-radius: 15px;
 }
 .pj4_sub_img1{
     background-image: url(/public/img/test_img/test3.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     border-radius: 15px;
 }
 .pj4_sub_img2{
     background-image: url(/public/img/test_img/test4.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     border-radius: 15px;
 }
 
