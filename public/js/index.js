@@ -160,3 +160,72 @@ function loadHandler(){
 
 setTimeout(loadHandler, 2800);
 
+// const wProjectWrap = document.querySelector("#project_wrap")
+// const mProjectWrap = document.querySelector("#m_project_wrap")
+// if(document.innerWidth < 769) {
+//     wProjectWrap.classList.add("off")
+// }else{
+//     mProjectWrap.classList.add("off")
+// }
+
+let slides = document.querySelector("#project_wrap")
+let slideItem = document.querySelectorAll("#project_wrap > li")
+let firstItemClone = slides.firstElementChild.cloneNode(true);
+let prevBtn = document.querySelector("#prev_btn")
+let nextBtn = document.querySelector("#next_btn")
+
+
+let count =1
+let intervalId = 0
+
+function slide (){
+    if(window.innerWidth < 769){
+        for (let i=0; i < slideItem.length; i++){
+            if(i === count) {
+                slideItem[i].classList.remove("off")
+            }else {
+                slideItem[i].classList.add("off")
+            }
+        }
+        if(++count === 4) count =0 
+        console.log(count)
+    }else{
+
+        slideItem[0].classList.remove("off")
+        slideItem[1].classList.remove("off")
+        slideItem[2].classList.remove("off")
+        slideItem[3].classList.remove("off")
+    }
+}
+
+intervalId = setInterval(slide, 1500)
+
+function prevHandler(e){
+    clearInterval(intervalId)
+    console.log(count)
+    let index = count === 0 ? slideItem.length -1 :count - 1
+    console.log(index)
+    // console.log(count)
+    // slideItem[index].classList.remove("off")
+    // slideItem[index].classList.add("off")
+    count = index
+    if(window.innerWidth < 769){
+        for (let i=count; i < slideItem.length; i++){
+            if(i === count) {
+                slideItem[i].classList.remove("off")
+            }else {
+                slideItem[i].classList.add("off")
+            }
+        }
+        if(++count === 4) count =0 
+    }else{
+        
+        slideItem[0].classList.remove("off")
+        slideItem[1].classList.remove("off")
+        slideItem[2].classList.remove("off")
+        slideItem[3].classList.remove("off")
+    }
+    intervalId = setInterval(slide, 1500)
+}
+
+prevBtn.addEventListener("click", prevHandler)
