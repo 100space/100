@@ -173,6 +173,8 @@ let slideItem = document.querySelectorAll("#project_wrap > li")
 let firstItemClone = slides.firstElementChild.cloneNode(true);
 let prevBtn = document.querySelector("#prev_btn")
 let nextBtn = document.querySelector("#next_btn")
+// let liWidth = slideItem[0].clientWidth
+// let transWidth = 0
 
 
 let count =1
@@ -182,9 +184,9 @@ function slide (){
     if(window.innerWidth < 769){
         for (let i=0; i < slideItem.length; i++){
             if(i === count) {
-                slideItem[i].classList.remove("off")
+                slideItem[i].classList.remove("off_project")
             }else {
-                slideItem[i].classList.add("off")
+                slideItem[i].classList.add("off_project")
             }
         }
         if(++count === 4) count =0 
@@ -200,29 +202,39 @@ function slide (){
 
 intervalId = setInterval(slide, 1500)
 
-// function prevHandler(e){
-//     clearInterval(intervalId)
-//     console.log(count)
-//     let index = count === 0 ? slideItem.length -1 :count - 1
-//     console.log(index)
-//     count = index
-//     if(window.innerWidth < 769){
-//         for (let i=count; i < slideItem.length; i++){
-//             if(i === count) {
-//                 slideItem[i].classList.remove("off")
-//             }else {
-//                 slideItem[i].classList.add("off")
-//             }
-//         }
-//         if(++count === 4) count =0 
-//     }else{
-        
-//         slideItem[0].classList.remove("off")
-//         slideItem[1].classList.remove("off")
-//         slideItem[2].classList.remove("off")
-//         slideItem[3].classList.remove("off")
-//     }
-//     intervalId = setInterval(slide, 1500)
-// }
+function prevHandler(e){
+    clearInterval(intervalId)
+    console.log(count)
+    let index = count === 0 ? slideItem.length -1 :count - 1
+    console.log(index)
+    console.log(count)
+    for (let i = 0; i < slideItem.length; i++){
+        if(index === i) {
+            slideItem[i].classList.remove("off")
+        }else {
+            slideItem[i].classList.add("off")
+        }
+    }
+    if(++count === 4) count = 0 
+    count = index
+    intervalId = setInterval(slide, 1500)
+}
 
-// prevBtn.addEventListener("click", prevHandler)
+prevBtn.addEventListener("click", prevHandler)
+
+function nextHandler(e){
+    clearInterval(intervalId)
+    let index = count === slideItem.length -1 ? 0 :count + 1
+    for (let i = 0; i < slideItem.length; i++){
+        if(index === i) {
+            slideItem[i].classList.remove("off")
+        }else {
+            slideItem[i].classList.add("off")
+        }
+    }
+    if(++count === 4) count = 0 
+    count = index
+    intervalId = setInterval(slide, 1500)
+}
+
+nextBtn.addEventListener("click", nextHandler)
