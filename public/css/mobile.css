@@ -316,9 +316,8 @@ html{
     position: absolute;
     width: 100%;
     height: 100vh;
-    /* margin: 0 auto; */
-    padding: 30px;
     margin: 0 auto;
+    padding: 30px;
     scroll-snap-stop: always;
     scroll-snap-align: center;
     overflow : hidden;
@@ -335,6 +334,8 @@ html{
     scroll-snap-align: center;
     background-attachment: fixed;
     margin-bottom: 100px;
+    opacity: 1;
+    transition: all 1s;
 
 }
 #project_wrap > li > div{
@@ -350,7 +351,11 @@ html{
 }
 
 .off{
-    display: none !important;
+    /* display: none !important; */
+}
+.off_project{
+    opacity: 0 !important;
+    transition: all 1s;
 }
 .on{
     display: inline-block;
@@ -438,6 +443,7 @@ html{
 
 /* contact 영역 */
 #contact_wrap{
+    margin-top: 100vh;
     width: 100vw;
     height: 100vh;
     scroll-snap-align: center;
