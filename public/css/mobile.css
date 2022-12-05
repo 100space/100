@@ -351,7 +351,11 @@ html{
 }
 
 .off{
-    display: none !important;
+    /* display: none !important; */
+}
+.off_project{
+    opacity: 0 !important;
+    transition: all 1s;
 }
 .off_project{
     opacity: 0 !important;
