@@ -210,9 +210,9 @@ function prevHandler(e){
     console.log(count)
     for (let i = 0; i < slideItem.length; i++){
         if(index === i) {
-            slideItem[i].classList.remove("off")
+            slideItem[i].classList.remove("off_project")
         }else {
-            slideItem[i].classList.add("off")
+            slideItem[i].classList.add("off_project")
         }
     }
     if(++count === 4) count = 0 
@@ -227,9 +227,9 @@ function nextHandler(e){
     let index = count === slideItem.length -1 ? 0 :count + 1
     for (let i = 0; i < slideItem.length; i++){
         if(index === i) {
-            slideItem[i].classList.remove("off")
+            slideItem[i].classList.remove("off_project")
         }else {
-            slideItem[i].classList.add("off")
+            slideItem[i].classList.add("off_project")
         }
     }
     if(++count === 4) count = 0 
